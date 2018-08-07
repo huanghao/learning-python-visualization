@@ -1,0 +1,15 @@
+numpy, scipy
+pandas
+matplotlib, bokeh
+pil, opencv, skimage
+sklearn
+networkx
+sympy
+地图
+3D
+csv, re, json, xml, excel
+pip, venv
+pygame
+图类型：基本，时间，分布
+描述性统计
+https://www.cnblogs.com/arnoldlu/p/7553978.html
