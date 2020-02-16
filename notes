@@ -1,16 +1,15 @@
-numpy, scipy
-pandas
-matplotlib, bokeh
-pil, opencv, skimage
-sklearn
-networkx
-sympy
-地图
-3D
-csv, re, json, xml, excel
-pip, venv
-pygame
-图类型：基本，时间，分布
-描述性统计
-动画
+1）常用描述性统计量
+2）常见图表的类型和表达含义：线，饼，直方，堆叠，气泡，时间相关
+3）python包安装，pip, venv
+学会怎么安装包，怎么判断版本依赖，准备好工作环境
+4）字符串处理，re，json, csv, xml, excel
+学会如何把各种文本输入变成结构化数据
+5）数值处理，numpy, scipy, pandas
+学会如何处理大量的数值数据，对矩阵计算有一定认识
+6）画图，matplotlib, bokeh
+学会如何画常见图表，并且能类推到更复杂的图表
+7）图片，pil/opencv/skimage
+学会简单的图片处理技术
+8）其他相关库以及如果找到更多资料，sklearn, networkx, sympy, pygame
+
 https://www.cnblogs.com/arnoldlu/p/7553978.html
