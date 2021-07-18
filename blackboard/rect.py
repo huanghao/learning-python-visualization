@@ -25,7 +25,7 @@ def process(fname):
     cv.normalize(blur, norm, 50, 200, cv.NORM_MINMAX, cv.CV_8U)
 
     hist2 = cv.calcHist([norm], [0], None, [256], [0, 256])
-    white = 128
+    white = 150
     ret, thresh = cv.threshold(blur, white, 255, cv.THRESH_BINARY)
 
     if 0:
@@ -70,7 +70,7 @@ def process(fname):
                 squares.append(cnt)
 
     if not squares:
-        return
+        #return
         for cnt in contours:
             cv.polylines(small, [cnt], True, (255, 0, 0), 2)
         while 1:
@@ -122,15 +122,24 @@ def process(fname):
     kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]], np.float32)
     im = cv.filter2D(im, -1, kernel)
 
-    out_fname = fname + '.my.jpeg'
-    cv.imwrite(out_fname, im)
-    return out_fname
+    def imwrite(fname, cat, im):
+        output_fname = f'{fname}.{cat}.jpeg'
+        cv.imwrite(output_fname, im)
+        return output_fname
+
+    # out_fname = fname + '.my.jpeg'
+    # cv.imwrite(out_fname, im)
+    # return out_fname
+    imwrite(fname, 'small', small)
+    imwrite(fname, 'thresh', thresh)
+    imwrite(fname, 'contours', cnts)
+    imwrite(fname, 'result', im)
 
     while 1:
         cv.imshow('small', small)
         cv.imshow('thresh', thresh)
         cv.imshow('contours', cnts)
-        cv.imshow('im', im)
+        cv.imshow('result', im)
         ch = cv.waitKey(0)
         if ch in (27, 113):
             break
